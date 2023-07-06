@@ -1,11 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Strazz's Cookie Clicker";
 }
+    <div id="container">
+        <div id="counter">0</div>
+        <img id="cookie" src="~/img/nobg1strazz.png" alt="Click me!" />
+    </div>
 
-<body>
-    <div id="counter">0</div>
-    <img id="cookie" src="~/img/nobg1strazz.png" alt="Click me!" />
-</body>
 @section Scripts{
     <script>document.getElementById('cookie').addEventListener('click', function () {
             fetch('/Home/IncrementCounter', {
