@@ -1,2 +1,2 @@
-# StrazzClicker :COOKIE: 
+# StrazzClicker 🍪
 Cookie Clicker Rip-Off
