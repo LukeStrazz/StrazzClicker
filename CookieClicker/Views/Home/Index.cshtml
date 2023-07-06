@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Strazz's Cookie Clicker";
+}
+
+<body>
+    <div id="counter">0</div>
+    <img id="cookie" src="~/img/nobg1strazz.png" alt="Click me!" />
+</body>
+@section Scripts{
+    <script>document.getElementById('cookie').addEventListener('click', function () {
+            fetch('/Home/IncrementCounter', {
+                method: 'POST'
+            })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                if (data.status === "success") {
+                    let counter = document.getElementById('counter');
+                    counter.innerText = parseInt(counter.innerText) + 1;
+
+                    // Code for animating cookie
+                    const cookie = document.getElementById('cookie');
+                    cookie.style.transform = 'scale(1.1)';
+                    setTimeout(function () {
+                        cookie.style.transform = 'scale(1)';
+                    }, 100);
+                }
+            });
+        });</script>
+}
